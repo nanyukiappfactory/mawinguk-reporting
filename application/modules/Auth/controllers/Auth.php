@@ -8,16 +8,18 @@ class Auth extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        $this->load->model('auth_model');
+        // $this->load->model('auth_model');
     }
 
     public function index()
     {
-        if ($this->auth_model->check_if_loggedin()) {
-            redirect('administration');
-        } else {
-            redirect('login');
-        }
+        // if ($this->auth_model->check_if_loggedin()) {
+        //     redirect('administration');
+        // } else {
+        //     redirect('login');
+        // }
+
+        redirect('administration');
     }
 
     public function login()
