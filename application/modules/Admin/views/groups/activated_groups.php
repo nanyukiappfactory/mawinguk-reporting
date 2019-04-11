@@ -1,8 +1,8 @@
 <?php
 $tr_groups = "";
-if ($kaiza_groups->num_rows() > 0) {
+if ($registered_groups->num_rows() > 0) {
     $count = $counter + 1;
-    foreach ($kaiza_groups->result() as $row) {
+    foreach ($registered_groups->result() as $row) {
         $group_name = preg_replace('/\s/', '-', $row->group_name);
 
         if ($row->group_status == 1) {
