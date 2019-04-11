@@ -6,7 +6,7 @@ if ($kaiza_groups->num_rows() > 0) {
         $group_name = preg_replace('/\s/', '-', $row->group_name);
 
         if ($row->group_status == 1) {
-            $message = "Are you sure you want to stop the fetching reponses and action cards send to this group??";
+            $message = "Are you sure you want to stop the fetching reponses and action cards send to this group: " . $row->group_name . "??";
             $td_group_status = "
 				<a href='" . base_url() . "administration/deactivate-group/" . $row->group_id . "'
 				class='btn btn-sm btn-warning' onclick='return confirm(\"" . $message . "\")'>
@@ -14,7 +14,7 @@ if ($kaiza_groups->num_rows() > 0) {
 				</a>
 			";
         } else {
-            $message = "Are you Sure You want Register a webhook to fetch reponses and action cards submitted to this group!!!";
+            $message = "Are you Sure You want Register a webhook to fetch reponses and action cards submitted to this group: " . $row->group_name . "!!!";
             $td_group_status = "
 				<a href='" . base_url() . "administration/activate-group/" . $row->group_id . "' class='btn btn-sm btn-success' onclick='return confirm(\"" . $message . "\")'>
 				<i class='far fa-thumbs-up'></i>
